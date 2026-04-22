@@ -110,16 +110,25 @@ export default function StatsSection() {
               <div className="flex flex-col md:flex-row md:items-center gap-4 mb-2">
                 <span className="text-4xl">🏗️</span>
                 <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 text-xs font-mono mb-2">
-                    <span className="pulse-dot w-1.5 h-1.5 rounded-full bg-cyan-400 inline-block" />
-                    В разработке · 2026
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 text-xs font-mono">
+                      <span className="pulse-dot w-1.5 h-1.5 rounded-full bg-cyan-400 inline-block" />
+                      Земля куплена · 2026
+                    </div>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-orange-500/40 bg-orange-500/10 text-orange-300 text-xs font-mono">
+                      <span className="pulse-dot w-1.5 h-1.5 rounded-full bg-orange-400 inline-block" />
+                      Ищем инвесторов
+                    </div>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-xs font-mono">
+                      Запуск · 2028
+                    </div>
                   </div>
                   <h3 className="text-3xl md:text-4xl font-bold text-white">
                     Индустриальный парк{' '}
                     <span className="gradient-text-purple">«Бородино»</span>
                   </h3>
                   <p className="text-gray-400 mt-2 max-w-2xl">
-                    Земля куплена. Строим флагманский производственный объект ВПК — площадку нового поколения для выпуска напитков и логистики под ключ.
+                    В 2026 году куплена земля. Плановый запуск — 2028. Сегодня открыты для инвестиций: строим производственный объект нового поколения для выпуска напитков и логистики под ключ.
                   </p>
                 </div>
               </div>
@@ -167,11 +176,17 @@ export default function StatsSection() {
               ))}
             </div>
 
-            <div className="px-8 py-5 bg-white/[0.02] flex flex-col md:flex-row items-start md:items-center gap-3">
+            <div className="px-8 py-5 bg-white/[0.02] flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
               <div className="flex items-center gap-2 text-sm text-gray-500">
                 <span className="w-2 h-2 rounded-full bg-green-400 inline-block pulse-dot" />
                 Также: склады ответственного хранения · отгрузка в сети · фулфилмент WB, Ozon и других маркетплейсов
               </div>
+              <button
+                className="shrink-0 px-6 py-2.5 rounded-xl text-sm font-bold text-white transition-all hover:scale-105"
+                style={{ background: 'linear-gradient(135deg, #FF6B00, #FF006E)', boxShadow: '0 0 20px rgba(255,107,0,0.3)' }}
+              >
+                Обсудить инвестиции →
+              </button>
             </div>
           </div>
         </div>

@@ -97,7 +97,7 @@ export default function StatsSection() {
                   <div className="flex flex-wrap gap-2 mb-2">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-green-500/30 bg-green-500/10 text-green-300 text-xs font-mono">
                       <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block pulse-dot" />
-                      Запущена · июнь 2025
+                      Запущена · июнь 2024
                     </div>
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-xs font-mono">
                       Работает
@@ -108,7 +108,7 @@ export default function StatsSection() {
                     <span className="gradient-text-purple">№1</span>
                   </h3>
                   <p className="text-gray-400 mt-2 max-w-2xl">
-                    Первая площадка запущена в июне 2025 года. Производит энергетики, холодные чаи и лимонады в алюминиевой банке.
+                    Первая площадка запущена в июне 2024 года. Производит энергетики, холодные чаи и лимонады в алюминиевой банке.
                   </p>
                 </div>
               </div>
@@ -117,7 +117,7 @@ export default function StatsSection() {
             <div className="grid md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-white/5">
               {[
                 { icon: '⚡', value: '12 000', unit: 'банок / час', label: 'Мощность линии', color: '#8B5CF6' },
-                { icon: '📅', value: 'Июнь', unit: '2025', label: 'Дата запуска', color: '#00FFFF' },
+                { icon: '📅', value: 'Июнь', unit: '2024', label: 'Дата запуска', color: '#00FFFF' },
                 { icon: '🏪', value: 'X5, Магнит,', unit: 'К&Б', label: 'Поставки в федеральные сети', color: '#FF6B00' },
               ].map((item) => (
                 <div key={item.label} className="p-8 flex flex-col gap-2 hover:bg-white/[0.02] transition-colors">

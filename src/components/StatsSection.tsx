@@ -99,6 +99,82 @@ export default function StatsSection() {
             </div>
           </div>
         </div>
+
+        {/* Бородино */}
+        <div className="reveal delay-200 mt-16">
+          <div
+            className="rounded-3xl overflow-hidden border"
+            style={{ borderColor: 'rgba(0,255,255,0.15)', background: 'var(--card-bg)' }}
+          >
+            <div className="px-8 pt-10 pb-6 border-b border-white/5">
+              <div className="flex flex-col md:flex-row md:items-center gap-4 mb-2">
+                <span className="text-4xl">🏗️</span>
+                <div>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 text-xs font-mono mb-2">
+                    <span className="pulse-dot w-1.5 h-1.5 rounded-full bg-cyan-400 inline-block" />
+                    В разработке · 2026
+                  </div>
+                  <h3 className="text-3xl md:text-4xl font-bold text-white">
+                    Индустриальный парк{' '}
+                    <span className="gradient-text-purple">«Бородино»</span>
+                  </h3>
+                  <p className="text-gray-400 mt-2 max-w-2xl">
+                    Земля куплена. Строим флагманский производственный объект ВПК — площадку нового поколения для выпуска напитков и логистики под ключ.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0 divide-y md:divide-y-0 md:divide-x divide-white/5">
+              {[
+                {
+                  icon: '🏭',
+                  value: '60 000',
+                  unit: 'банок / час',
+                  label: 'Мощность новой линии',
+                  color: '#00FFFF',
+                },
+                {
+                  icon: '📐',
+                  value: '8 000',
+                  unit: 'м²',
+                  label: 'Производственные площади',
+                  color: '#8B5CF6',
+                },
+                {
+                  icon: '🚚',
+                  value: 'Прямая',
+                  unit: 'отгрузка',
+                  label: 'В федеральные сети без посредников',
+                  color: '#FF6B00',
+                },
+                {
+                  icon: '📦',
+                  value: 'Фулфилмент',
+                  unit: '360°',
+                  label: 'Полный цикл для маркетплейсов',
+                  color: '#FF006E',
+                },
+              ].map((item) => (
+                <div key={item.label} className="p-8 flex flex-col gap-2 group hover:bg-white/[0.02] transition-colors">
+                  <span className="text-3xl">{item.icon}</span>
+                  <div>
+                    <span className="text-2xl font-bold font-mono" style={{ color: item.color }}>{item.value}</span>
+                    <span className="text-gray-500 font-mono text-sm ml-2">{item.unit}</span>
+                  </div>
+                  <p className="text-gray-400 text-sm leading-snug">{item.label}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="px-8 py-5 bg-white/[0.02] flex flex-col md:flex-row items-start md:items-center gap-3">
+              <div className="flex items-center gap-2 text-sm text-gray-500">
+                <span className="w-2 h-2 rounded-full bg-green-400 inline-block pulse-dot" />
+                Также: склады ответственного хранения · отгрузка в сети · фулфилмент WB, Ozon и других маркетплейсов
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,7 +1,22 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
+const DRINKS = ['Энергетик', 'Холодный чай', 'Лимонад', 'Мохито', 'Тоник'];
 
 export default function HeroSection() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [drinkIndex, setDrinkIndex] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisible(false);
+      setTimeout(() => {
+        setDrinkIndex((i) => (i + 1) % DRINKS.length);
+        setVisible(true);
+      }, 300);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -10,8 +25,14 @@ export default function HeroSection() {
     if (!ctx) return;
 
     let animId: number;
-    const particles: Array<{ x: number; y: number; vx: number; vy: number; size: number; opacity: number; color: string }> = [];
-    const colors = ['#8B5CF6', '#00FFFF', '#FF006E', '#FF6B00'];
+
+    type Bubble = {
+      x: number; y: number; vy: number;
+      size: number; opacity: number; color: string;
+    };
+
+    const bubbles: Bubble[] = [];
+    const colors = ['#8B5CF6', '#00FFFF', '#FF006E', '#FF6B00', '#ffffff'];
 
     const resize = () => {
       canvas.width = canvas.offsetWidth;
@@ -20,52 +41,34 @@ export default function HeroSection() {
     resize();
     window.addEventListener('resize', resize);
 
-    for (let i = 0; i < 80; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        size: Math.random() * 2 + 0.5,
-        opacity: Math.random() * 0.6 + 0.1,
+    for (let i = 0; i < 60; i++) {
+      bubbles.push({
+        x: Math.random() * (canvas.width || 1200),
+        y: Math.random() * (canvas.height || 800),
+        vy: -(Math.random() * 0.6 + 0.2),
+        size: Math.random() * 3 + 1,
+        opacity: Math.random() * 0.5 + 0.1,
         color: colors[Math.floor(Math.random() * colors.length)],
       });
     }
 
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach((p) => {
-        p.x += p.vx;
-        p.y += p.vy;
-        if (p.x < 0) p.x = canvas.width;
-        if (p.x > canvas.width) p.x = 0;
-        if (p.y < 0) p.y = canvas.height;
-        if (p.y > canvas.height) p.y = 0;
+
+      bubbles.forEach((b) => {
+        b.y += b.vy;
+        b.x += Math.sin(b.y * 0.02) * 0.3;
+        if (b.y < -10) {
+          b.y = canvas.height + 10;
+          b.x = Math.random() * canvas.width;
+        }
 
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = p.color;
-        ctx.globalAlpha = p.opacity;
+        ctx.arc(b.x, b.y, b.size, 0, Math.PI * 2);
+        ctx.fillStyle = b.color;
+        ctx.globalAlpha = b.opacity;
         ctx.fill();
-      });
-      ctx.globalAlpha = 1;
-
-      particles.forEach((a, i) => {
-        particles.slice(i + 1).forEach((b) => {
-          const dx = a.x - b.x;
-          const dy = a.y - b.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 120) {
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.strokeStyle = '#8B5CF6';
-            ctx.globalAlpha = (1 - dist / 120) * 0.15;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-            ctx.globalAlpha = 1;
-          }
-        });
+        ctx.globalAlpha = 1;
       });
 
       animId = requestAnimationFrame(draw);
@@ -80,42 +83,125 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden grid-lines" style={{ background: 'var(--deep-bg)' }}>
+    <section
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{
+        background: 'radial-gradient(ellipse 120% 80% at 50% 60%, #1a0533 0%, #0a0a0a 60%)',
+      }}
+    >
+      {/* Сетка */}
+      <div className="absolute inset-0 grid-lines opacity-40" />
+
+      {/* Пузырьки */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 
+      {/* Большое свечение снизу — как жидкость */}
+      <div
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] rounded-full blur-[120px] pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse, rgba(139,92,246,0.35) 0%, rgba(0,255,255,0.15) 50%, transparent 70%)' }}
+      />
+      <div
+        className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full blur-[80px] pointer-events-none"
+        style={{ background: 'rgba(255,0,110,0.12)' }}
+      />
 
+      {/* Контент */}
+      <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
 
-      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-sm font-mono mb-8">
+        {/* Бейдж */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-500/40 bg-purple-500/10 text-purple-300 text-sm font-mono mb-10 backdrop-blur-sm">
           <span className="pulse-dot w-2 h-2 rounded-full bg-purple-400 inline-block" />
           Вяземская производственная компания
         </div>
 
-        <h1 className="text-6xl md:text-8xl font-bold leading-tight mb-6">
-          <span className="text-white">ВПК производит:</span>
-          <br />
-          <span className="gradient-text-purple text-glow-purple">
-            энергетики, холодные чаи,<br />лимонады
+        {/* Главный заголовок */}
+        <h1 className="font-bold leading-none mb-4 tracking-tight">
+          <span
+            className="block text-[clamp(3.5rem,12vw,9rem)]"
+            style={{
+              background: 'linear-gradient(135deg, #ffffff 0%, #e0c3fc 40%, #8B5CF6 70%, #00FFFF 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              textShadow: 'none',
+              filter: 'drop-shadow(0 0 40px rgba(139,92,246,0.6))',
+            }}
+          >
+            Твой вкус.
           </span>
-          <br />
-          <span className="text-white text-4xl md:text-5xl">в алюминиевой банке под вашим брендом</span>
+          <span
+            className="block text-[clamp(3rem,10vw,7.5rem)]"
+            style={{
+              background: 'linear-gradient(135deg, #FF6B00 0%, #FF006E 50%, #8B5CF6 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              filter: 'drop-shadow(0 0 30px rgba(255,107,0,0.5))',
+            }}
+          >
+            Твой бренд.
+          </span>
         </h1>
 
-        <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-          Производственная платформа полного цикла: от разработки рецептуры до поставки в федеральные сети. Путь бренда от идеи до полки — за месяцы, а не годы.
+        {/* Анимированный тип напитка */}
+        <div className="flex items-center justify-center gap-4 mb-10 h-16">
+          <div className="h-px w-16 bg-gradient-to-r from-transparent to-purple-500/60" />
+          <div
+            className="text-[clamp(1.5rem,4vw,2.5rem)] font-bold font-mono transition-all duration-300"
+            style={{
+              opacity: visible ? 1 : 0,
+              transform: visible ? 'translateY(0)' : 'translateY(8px)',
+              background: 'linear-gradient(90deg, #00FFFF, #8B5CF6)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              textShadow: 'none',
+              filter: 'drop-shadow(0 0 20px rgba(0,255,255,0.7))',
+            }}
+          >
+            {DRINKS[drinkIndex]}
+          </div>
+          <div className="h-px w-16 bg-gradient-to-l from-transparent to-cyan-500/60" />
+        </div>
+
+        {/* Подзаголовок */}
+        <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-14 leading-relaxed font-light">
+          Производим напитки в алюминиевой банке под вашим брендом —
+          <span className="text-white font-medium"> от рецептуры до полки</span> федеральных сетей.
         </p>
 
+        {/* Теги-пилюли */}
+        <div className="flex flex-wrap gap-3 justify-center mb-16">
+          {[
+            { label: '12 000 банок/час', color: '#8B5CF6' },
+            { label: 'X5 · Магнит · К&Б', color: '#00FFFF' },
+            { label: 'Sleeve от 25K банок', color: '#FF6B00' },
+            { label: 'Разработка рецептуры', color: '#FF006E' },
+          ].map((tag) => (
+            <span
+              key={tag.label}
+              className="px-4 py-2 rounded-full text-sm font-mono backdrop-blur-sm border"
+              style={{
+                borderColor: `${tag.color}30`,
+                background: `${tag.color}10`,
+                color: tag.color,
+              }}
+            >
+              {tag.label}
+            </span>
+          ))}
+        </div>
 
-
-        <div className="mt-20 flex flex-col items-center gap-2 text-gray-500 text-sm">
-          <span>Прокрути вниз</span>
+        {/* Скролл */}
+        <div className="flex flex-col items-center gap-2 text-gray-500 text-sm">
+          <span className="font-mono text-xs tracking-widest uppercase opacity-60">Прокрути вниз</span>
           <div className="w-5 h-8 rounded-full border border-gray-600 flex justify-center pt-1.5">
             <div className="scroll-dot w-1 h-2 rounded-full bg-purple-400" />
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0A0A0A] to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0A0A0A] to-transparent" />
     </section>
   );
 }

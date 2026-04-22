@@ -56,9 +56,9 @@ function Counter({ target, suffix, color, decimals = 0 }: { target: number; suff
 
 export default function StatsSection() {
   return (
-    <section className="relative py-32 px-6" style={{ background: 'var(--deep-bg)' }}>
-      <div className="max-w-6xl mx-auto">
-        <div className="reveal text-center mb-20">
+    <section className="slide relative h-screen flex items-center overflow-hidden px-6" style={{ background: 'var(--deep-bg)' }}>
+      <div className="max-w-6xl mx-auto w-full overflow-y-auto max-h-screen py-8">
+        <div className="reveal text-center mb-10">
           <span className="text-purple-400 font-mono text-sm tracking-widest uppercase">/ цифры говорят /</span>
           <h2 className="text-5xl md:text-6xl font-bold mt-4 text-white">
             Производство<br />

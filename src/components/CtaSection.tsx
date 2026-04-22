@@ -1,6 +1,6 @@
 export default function CtaSection() {
   return (
-    <section className="relative py-40 px-6 overflow-hidden" style={{ background: '#050505' }}>
+    <section className="slide relative h-screen flex flex-col justify-center overflow-hidden px-6" style={{ background: '#050505' }}>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[120px] opacity-20" style={{ background: 'conic-gradient(#8B5CF6, #00FFFF, #FF006E, #FF6B00, #8B5CF6)' }} />
 
       <div className="absolute inset-0 grid-lines opacity-30" />

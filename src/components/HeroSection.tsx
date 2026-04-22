@@ -103,7 +103,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden grid-lines" style={{ background: 'var(--deep-bg)' }}>
+    <section className="slide relative h-screen flex items-center justify-center overflow-hidden grid-lines" style={{ background: 'var(--deep-bg)' }}>
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
@@ -134,8 +134,8 @@ export default function HeroSection() {
           </button>
         </div>
 
-        <div className="mt-20 flex flex-col items-center gap-2 text-gray-500 text-sm">
-          <span>Прокрути вниз</span>
+        <div className="mt-16 flex flex-col items-center gap-2 text-gray-500 text-sm">
+          <span>Листай вниз</span>
           <div className="w-5 h-8 rounded-full border border-gray-600 flex justify-center pt-1.5">
             <div className="scroll-dot w-1 h-2 rounded-full bg-purple-400" />
           </div>

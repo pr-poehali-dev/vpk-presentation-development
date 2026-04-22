@@ -57,11 +57,11 @@ const TIMELINE = [
 
 export default function HistorySection() {
   return (
-    <section className="relative py-32 px-6 overflow-hidden" style={{ background: '#050505' }}>
+    <section className="slide relative h-screen flex items-center overflow-hidden px-6" style={{ background: '#050505' }}>
       <div className="absolute inset-0 grid-lines opacity-30" />
 
-      <div className="relative z-10 max-w-6xl mx-auto">
-        <div className="reveal text-center mb-20">
+      <div className="relative z-10 max-w-6xl mx-auto w-full overflow-y-auto max-h-screen py-8">
+        <div className="reveal text-center mb-8">
           <span className="text-cyan-400 font-mono text-sm tracking-widest uppercase">/ история компании /</span>
           <h2 className="text-5xl md:text-6xl font-bold mt-4 text-white">
             Путь от идеи<br />
@@ -72,8 +72,8 @@ export default function HistorySection() {
         <div className="timeline-line relative">
           {TIMELINE.map((item, i) => (
             <div
-              key={item.year}
-              className={`flex items-center mb-16 ${item.side === 'right' ? 'flex-row-reverse' : ''}`}
+              key={`${item.year}-${item.title}`}
+              className={`flex items-center mb-8 ${item.side === 'right' ? 'flex-row-reverse' : ''}`}
             >
               <div className={`w-5/12 ${item.side === 'right' ? 'reveal-right' : 'reveal-left'} delay-${(i % 3 + 1) * 100}`}>
                 <div

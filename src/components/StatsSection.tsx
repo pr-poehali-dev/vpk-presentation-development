@@ -84,107 +84,96 @@ export default function StatsSection() {
           ))}
         </div>
 
-        {/* Площадка 1 */}
-        <div className="reveal delay-200 mt-16">
-          <div className="rounded-3xl overflow-hidden border border-gray-100 bg-white shadow-sm">
-            <div className="px-8 pt-10 pb-6 border-b border-gray-100">
-              <div className="flex flex-col md:flex-row md:items-center gap-4 mb-2">
-                <span className="text-4xl">🏭</span>
-                <div>
-                  <div className="flex flex-wrap gap-2 mb-2">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-green-500/30 bg-green-50 text-green-700 text-xs font-mono">
-                      <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block pulse-dot" />
-                      Запущена · июнь 2024
-                    </div>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-200 bg-purple-50 text-purple-700 text-xs font-mono">
-                      Работает
-                    </div>
-                  </div>
-                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
-                    Производственная площадка{' '}
-                    <span style={{
-                      background: 'linear-gradient(135deg, #7c3aed, #0891b2)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text',
-                    }}>№1</span>
-                  </h3>
-                  <p className="text-gray-500 mt-2 max-w-2xl">
-                    Первая площадка запущена в июне 2024 года. Производит энергетики, холодные чаи и лимонады в алюминиевой банке.
-                  </p>
+        {/* Площадки — 2 карточки горизонтально */}
+        <div className="reveal delay-200 mt-16 grid md:grid-cols-2 gap-6">
+
+          {/* Площадка 1 */}
+          <div className="rounded-3xl overflow-hidden border border-gray-100 bg-white shadow-sm flex flex-col">
+            <div className="px-6 pt-8 pb-5 border-b border-gray-100">
+              <div className="flex flex-wrap gap-2 mb-3">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-green-500/30 bg-green-50 text-green-700 text-xs font-mono">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block pulse-dot" />
+                  Запущена · июнь 2024
+                </div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-200 bg-purple-50 text-purple-700 text-xs font-mono">
+                  Работает
                 </div>
               </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                Площадка{' '}
+                <span style={{
+                  background: 'linear-gradient(135deg, #7c3aed, #0891b2)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}>№1</span>
+              </h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Запущена в июне 2024 года. Производит энергетики, холодные чаи и лимонады в алюминиевой банке.
+              </p>
             </div>
-
-            <div className="grid md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+            <div className="grid grid-cols-3 divide-x divide-gray-100 flex-1">
               {[
-                { icon: '⚡', value: '12 000', unit: 'банок / час', label: 'Мощность линии', color: '#7c3aed' },
-                { icon: '📅', value: 'Июнь', unit: '2024', label: 'Дата запуска', color: '#0891b2' },
-                { icon: '🏪', value: 'X5, Магнит,', unit: 'К&Б', label: 'Поставки в федеральные сети', color: '#ea580c' },
+                { icon: '⚡', value: '12 000', unit: 'бан/ч', label: 'Мощность', color: '#7c3aed' },
+                { icon: '📅', value: 'Июнь', unit: '2024', label: 'Запуск', color: '#0891b2' },
+                { icon: '🏪', value: 'X5,Магнит', unit: 'К&Б', label: 'Сети', color: '#ea580c' },
               ].map((item) => (
-                <div key={item.label} className="p-8 flex flex-col gap-2 hover:bg-gray-50 transition-colors">
-                  <span className="text-3xl">{item.icon}</span>
+                <div key={item.label} className="p-5 flex flex-col gap-1 hover:bg-gray-50 transition-colors">
+                  <span className="text-2xl">{item.icon}</span>
                   <div>
-                    <span className="text-2xl font-bold font-mono" style={{ color: item.color }}>{item.value}</span>
-                    <span className="text-gray-400 font-mono text-sm ml-2">{item.unit}</span>
+                    <span className="text-lg font-bold font-mono leading-tight" style={{ color: item.color }}>{item.value}</span>
+                    <span className="text-gray-400 font-mono text-xs ml-1">{item.unit}</span>
                   </div>
-                  <p className="text-gray-500 text-sm leading-snug">{item.label}</p>
+                  <p className="text-gray-500 text-xs leading-snug">{item.label}</p>
                 </div>
               ))}
             </div>
           </div>
-        </div>
 
-        {/* Площадка 2 */}
-        <div className="reveal delay-200 mt-8">
-          <div className="rounded-3xl overflow-hidden border border-gray-100 bg-white shadow-sm">
-            <div className="px-8 pt-10 pb-6 border-b border-gray-100">
-              <div className="flex flex-col md:flex-row md:items-center gap-4 mb-2">
-                <span className="text-4xl">🏭</span>
-                <div>
-                  <div className="flex flex-wrap gap-2 mb-2">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-green-500/30 bg-green-50 text-green-700 text-xs font-mono">
-                      <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block pulse-dot" />
-                      Запущена · апрель 2026
-                    </div>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-orange-200 bg-orange-50 text-orange-700 text-xs font-mono">
-                      <span className="w-1.5 h-1.5 rounded-full bg-orange-400 inline-block pulse-dot" />
-                      Полная загрузка
-                    </div>
-                  </div>
-                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
-                    Производственная площадка{' '}
-                    <span style={{
-                      background: 'linear-gradient(135deg, #ea580c, #db2777)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text',
-                    }}>№2</span>
-                  </h3>
-                  <p className="text-gray-500 mt-2 max-w-2xl">
-                    Вторая площадка запущена в апреле 2026 года. На сегодняшний день работает на полной загрузке производственных мощностей.
-                  </p>
+          {/* Площадка 2 */}
+          <div className="rounded-3xl overflow-hidden border border-gray-100 bg-white shadow-sm flex flex-col">
+            <div className="px-6 pt-8 pb-5 border-b border-gray-100">
+              <div className="flex flex-wrap gap-2 mb-3">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-green-500/30 bg-green-50 text-green-700 text-xs font-mono">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block pulse-dot" />
+                  Запущена · апрель 2026
+                </div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-orange-200 bg-orange-50 text-orange-700 text-xs font-mono">
+                  <span className="w-1.5 h-1.5 rounded-full bg-orange-400 inline-block pulse-dot" />
+                  Полная загрузка
                 </div>
               </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                Площадка{' '}
+                <span style={{
+                  background: 'linear-gradient(135deg, #ea580c, #db2777)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}>№2</span>
+              </h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Запущена в апреле 2026 года. Работает на полной загрузке производственных мощностей.
+              </p>
             </div>
-
-            <div className="grid md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+            <div className="grid grid-cols-3 divide-x divide-gray-100 flex-1">
               {[
-                { icon: '⚡', value: '9 000', unit: 'банок / час', label: 'Мощность линии', color: '#ea580c' },
-                { icon: '📅', value: 'Апрель', unit: '2026', label: 'Дата запуска', color: '#7c3aed' },
-                { icon: '🔥', value: '100%', unit: 'загрузка', label: 'Полная загрузка мощностей', color: '#db2777' },
+                { icon: '⚡', value: '9 000', unit: 'бан/ч', label: 'Мощность', color: '#ea580c' },
+                { icon: '📅', value: 'Апрель', unit: '2026', label: 'Запуск', color: '#7c3aed' },
+                { icon: '🔥', value: '100%', unit: 'загрузка', label: 'Мощности', color: '#db2777' },
               ].map((item) => (
-                <div key={item.label} className="p-8 flex flex-col gap-2 hover:bg-gray-50 transition-colors">
-                  <span className="text-3xl">{item.icon}</span>
+                <div key={item.label} className="p-5 flex flex-col gap-1 hover:bg-gray-50 transition-colors">
+                  <span className="text-2xl">{item.icon}</span>
                   <div>
-                    <span className="text-2xl font-bold font-mono" style={{ color: item.color }}>{item.value}</span>
-                    <span className="text-gray-400 font-mono text-sm ml-2">{item.unit}</span>
+                    <span className="text-lg font-bold font-mono leading-tight" style={{ color: item.color }}>{item.value}</span>
+                    <span className="text-gray-400 font-mono text-xs ml-1">{item.unit}</span>
                   </div>
-                  <p className="text-gray-500 text-sm leading-snug">{item.label}</p>
+                  <p className="text-gray-500 text-xs leading-snug">{item.label}</p>
                 </div>
               ))}
             </div>
           </div>
+
         </div>
 
         {/* Бегущая строка */}

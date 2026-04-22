@@ -1,30 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
-
-const WORDS = ['энергетики', 'лимонады', 'холодные чаи', 'ваш бренд'];
+import { useEffect, useRef } from 'react';
 
 export default function HeroSection() {
-  const [wordIndex, setWordIndex] = useState(0);
-  const [displayed, setDisplayed] = useState('');
-  const [deleting, setDeleting] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    const word = WORDS[wordIndex];
-    let timeout: ReturnType<typeof setTimeout>;
-
-    if (!deleting && displayed.length < word.length) {
-      timeout = setTimeout(() => setDisplayed(word.slice(0, displayed.length + 1)), 80);
-    } else if (!deleting && displayed.length === word.length) {
-      timeout = setTimeout(() => setDeleting(true), 2000);
-    } else if (deleting && displayed.length > 0) {
-      timeout = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 40);
-    } else if (deleting && displayed.length === 0) {
-      setDeleting(false);
-      setWordIndex((i) => (i + 1) % WORDS.length);
-    }
-
-    return () => clearTimeout(timeout);
-  }, [displayed, deleting, wordIndex]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -113,12 +90,13 @@ export default function HeroSection() {
         </div>
 
         <h1 className="text-6xl md:text-8xl font-bold leading-tight mb-6">
-          <span className="text-white">ВПК производит</span>
+          <span className="text-white">ВПК производит:</span>
           <br />
           <span className="gradient-text-purple text-glow-purple">
-            {displayed}
-            <span className="animate-pulse">|</span>
+            энергетики, холодные чаи,<br />лимонады
           </span>
+          <br />
+          <span className="text-white text-4xl md:text-5xl">в алюминиевой банке под вашим брендом</span>
         </h1>
 
         <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">

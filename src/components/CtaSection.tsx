@@ -67,6 +67,11 @@ export default function CtaSection() {
       </div>
 
       <footer className="relative z-10 mt-32 pt-8 border-t border-white/10 text-center">
+        <img
+          src="https://cdn.poehali.dev/projects/464e3b76-117f-416b-ac7d-1548e29f69d5/bucket/f0ace726-ce65-4e1c-b841-4438a5f61b65.jpg"
+          alt="ВПК"
+          className="h-10 w-auto object-contain mx-auto mb-4 opacity-50"
+        />
         <p className="text-gray-600 font-mono text-sm">
           © 2024 ООО «ВПК» — Вяземская производственная компания. Все права защищены.
         </p>

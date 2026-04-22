@@ -19,9 +19,12 @@ export default function HeroSection() {
 
       <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
 
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-400/40 bg-purple-100 text-purple-700 text-sm font-mono mb-10 backdrop-blur-sm">
-          <span className="pulse-dot w-2 h-2 rounded-full bg-purple-400 inline-block" />
-          Вяземская производственная компания
+        <div className="flex justify-center mb-10">
+          <img
+            src="https://cdn.poehali.dev/projects/464e3b76-117f-416b-ac7d-1548e29f69d5/bucket/f0ace726-ce65-4e1c-b841-4438a5f61b65.jpg"
+            alt="ВПК — Вяземская производственная компания"
+            className="h-20 md:h-28 w-auto object-contain"
+          />
         </div>
 
         <h1 className="font-bold leading-none mb-6 tracking-tight">

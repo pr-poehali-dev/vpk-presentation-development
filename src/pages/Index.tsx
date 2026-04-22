@@ -105,6 +105,41 @@ export default function Index() {
     return () => window.removeEventListener('keydown', onKey);
   }, [activeSlide]);
 
+  // Свайп на мобильных
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    let touchStartY = 0;
+
+    const onTouchStart = (e: TouchEvent) => {
+      touchStartY = e.touches[0].clientY;
+    };
+
+    const onTouchEnd = (e: TouchEvent) => {
+      if (isScrolling.current) return;
+      const delta = touchStartY - e.changedTouches[0].clientY;
+      if (Math.abs(delta) < 50) return;
+
+      const slides = container.querySelectorAll('.slide');
+      const direction = delta > 0 ? 1 : -1;
+      const next = Math.min(Math.max(activeSlide + direction, 0), slides.length - 1);
+
+      if (next !== activeSlide) {
+        isScrolling.current = true;
+        slides[next].scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => { isScrolling.current = false; }, 800);
+      }
+    };
+
+    container.addEventListener('touchstart', onTouchStart, { passive: true });
+    container.addEventListener('touchend', onTouchEnd, { passive: true });
+    return () => {
+      container.removeEventListener('touchstart', onTouchStart);
+      container.removeEventListener('touchend', onTouchEnd);
+    };
+  }, [activeSlide]);
+
   const goToSlide = (idx: number) => {
     const container = containerRef.current;
     if (!container) return;

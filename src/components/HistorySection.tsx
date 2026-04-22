@@ -57,44 +57,45 @@ const TIMELINE = [
 
 export default function HistorySection() {
   return (
-    <section className="relative py-32 px-6 overflow-hidden" style={{ background: '#050505' }}>
-      <div className="absolute inset-0 grid-lines opacity-30" />
+    <section className="relative py-32 px-6 overflow-hidden" style={{ background: 'var(--deep-bg)' }}>
+      <div className="absolute inset-0 grid-lines opacity-50" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="reveal text-center mb-20">
-          <span className="text-cyan-400 font-mono text-sm tracking-widest uppercase">/ история компании /</span>
+          <span className="text-purple-400 font-mono text-sm tracking-widest uppercase">/ история компании /</span>
           <h2 className="text-5xl md:text-6xl font-bold mt-4 text-white">
             Путь от идеи<br />
-            <span className="gradient-text-purple">до федеральных полок</span>
+            <span className="gradient-text-fire">до федеральных полок</span>
           </h2>
         </div>
 
         <div className="timeline-line relative">
           {TIMELINE.map((item, i) => (
             <div
-              key={item.year}
+              key={item.year + i}
               className={`flex items-center mb-16 ${item.side === 'right' ? 'flex-row-reverse' : ''}`}
             >
               <div className={`w-5/12 ${item.side === 'right' ? 'reveal-right' : 'reveal-left'} delay-${(i % 3 + 1) * 100}`}>
-                <div
-                  className="rounded-2xl p-6 border transition-all duration-300 hover:scale-105"
-                  style={{
-                    background: 'var(--card-bg)',
-                    borderColor: `${item.color}30`,
-                    boxShadow: `0 0 30px ${item.color}15`,
-                  }}
-                >
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="text-3xl">{item.icon}</span>
-                    <span
-                      className="text-xs font-mono px-3 py-1 rounded-full border"
-                      style={{ color: item.color, borderColor: `${item.color}40`, background: `${item.color}10` }}
-                    >
-                      {item.tag}
-                    </span>
+                <div className="animated-border rounded-2xl p-px">
+                  <div
+                    className="rounded-2xl p-6 h-full flex flex-col gap-3 transition-all duration-300 hover:scale-105"
+                    style={{ background: 'var(--card-bg)' }}
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-3xl float">{item.icon}</span>
+                      <span
+                        className="text-xs font-mono px-3 py-1 rounded-full border"
+                        style={{ color: item.color, borderColor: `${item.color}40`, background: `${item.color}10` }}
+                      >
+                        {item.tag}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                    <p className="text-gray-400 text-sm leading-relaxed">{item.text}</p>
+                    <div className="mt-auto pt-4 border-t border-white/5">
+                      <div className="h-1 rounded-full" style={{ background: item.color, boxShadow: `0 0 12px ${item.color}` }} />
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{item.text}</p>
                 </div>
               </div>
 

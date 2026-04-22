@@ -83,6 +83,22 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden grid-lines" style={{ background: 'var(--deep-bg)' }}>
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 
+      <div className="hidden md:flex absolute left-8 top-1/2 -translate-y-1/2 flex-col items-center gap-3 z-20">
+        <div className="w-px h-16 bg-gradient-to-b from-transparent to-purple-500/50" />
+        <span className="text-purple-400 font-mono text-xs tracking-[0.3em] uppercase" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>
+          Наша история
+        </span>
+        <div className="w-px h-16 bg-gradient-to-t from-transparent to-purple-500/50" />
+      </div>
+
+      <div className="hidden md:flex absolute right-8 top-1/2 -translate-y-1/2 flex-col items-center gap-3 z-20">
+        <div className="w-px h-16 bg-gradient-to-b from-transparent to-cyan-500/50" />
+        <span className="text-cyan-400 font-mono text-xs tracking-[0.3em] uppercase" style={{ writingMode: 'vertical-rl' }}>
+          Связаться
+        </span>
+        <div className="w-px h-16 bg-gradient-to-t from-transparent to-cyan-500/50" />
+      </div>
+
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-sm font-mono mb-8">
           <span className="pulse-dot w-2 h-2 rounded-full bg-purple-400 inline-block" />
@@ -104,12 +120,8 @@ export default function HeroSection() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button className="btn-neon px-8 py-4 rounded-xl text-lg font-semibold font-mono tracking-wide">
-            Наша история →
-          </button>
-          <button className="px-8 py-4 rounded-xl text-lg font-semibold bg-white/5 text-white border border-white/10 hover:bg-white/10 transition-all">
-            Связаться
-          </button>
+          <button className="btn-neon px-8 py-4 rounded-xl text-lg font-semibold font-mono tracking-wide" />
+          <button className="px-8 py-4 rounded-xl text-lg font-semibold bg-white/5 text-white border border-white/10 hover:bg-white/10 transition-all" />
         </div>
 
         <div className="mt-20 flex flex-col items-center gap-2 text-gray-500 text-sm">

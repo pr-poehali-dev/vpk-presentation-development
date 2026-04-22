@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import MissionSection from '@/components/MissionSection';
 import HistorySection from '@/components/HistorySection';
@@ -34,7 +33,6 @@ export default function Index() {
 
   return (
     <main className="bg-white">
-      <Navbar />
       <HeroSection />
       <MissionSection />
       <HistorySection />

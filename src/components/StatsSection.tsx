@@ -84,6 +84,56 @@ export default function StatsSection() {
           ))}
         </div>
 
+        {/* Площадка 2 */}
+        <div className="reveal delay-200 mt-16">
+          <div
+            className="rounded-3xl overflow-hidden border"
+            style={{ borderColor: 'rgba(255,107,0,0.2)', background: 'var(--card-bg)' }}
+          >
+            <div className="px-8 pt-10 pb-6 border-b border-white/5">
+              <div className="flex flex-col md:flex-row md:items-center gap-4 mb-2">
+                <span className="text-4xl">🏭</span>
+                <div>
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-green-500/30 bg-green-500/10 text-green-300 text-xs font-mono">
+                      <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block pulse-dot" />
+                      Запущена · апрель 2026
+                    </div>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-300 text-xs font-mono">
+                      <span className="w-1.5 h-1.5 rounded-full bg-orange-400 inline-block pulse-dot" />
+                      Полная загрузка
+                    </div>
+                  </div>
+                  <h3 className="text-3xl md:text-4xl font-bold text-white">
+                    Производственная площадка{' '}
+                    <span className="gradient-text-fire">№2</span>
+                  </h3>
+                  <p className="text-gray-400 mt-2 max-w-2xl">
+                    Вторая площадка запущена в апреле 2026 года. На сегодняшний день работает на полной загрузке производственных мощностей.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-white/5">
+              {[
+                { icon: '⚡', value: '9 000', unit: 'банок / час', label: 'Мощность линии', color: '#FF6B00' },
+                { icon: '📅', value: 'Апрель', unit: '2026', label: 'Дата запуска', color: '#8B5CF6' },
+                { icon: '🔥', value: '100%', unit: 'загрузка', label: 'Полная загрузка мощностей', color: '#FF006E' },
+              ].map((item) => (
+                <div key={item.label} className="p-8 flex flex-col gap-2 hover:bg-white/[0.02] transition-colors">
+                  <span className="text-3xl">{item.icon}</span>
+                  <div>
+                    <span className="text-2xl font-bold font-mono" style={{ color: item.color }}>{item.value}</span>
+                    <span className="text-gray-500 font-mono text-sm ml-2">{item.unit}</span>
+                  </div>
+                  <p className="text-gray-400 text-sm leading-snug">{item.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         <div className="reveal delay-300 mt-16 rounded-3xl p-8 overflow-hidden relative" style={{ background: 'var(--card-bg)', border: '1px solid rgba(139,92,246,0.2)' }}>
           <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-transparent to-cyan-500/10" />
           <div className="relative z-10">

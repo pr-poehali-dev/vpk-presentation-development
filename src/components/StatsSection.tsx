@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 
 const STATS = [
-  { value: 80000000, suffix: '+', label: 'Банок произведено', color: '#8B5CF6' },
-  { value: 12000, suffix: '', label: 'Банок в час — мощность линии', color: '#00FFFF' },
-  { value: 100, suffix: '+', label: 'Деклараций на продукцию', color: '#FF6B00' },
-  { value: 3, suffix: '', label: 'Федеральные сети: X5, Магнит, К&Б', color: '#FF006E' },
+  { value: 80000000, suffix: '+', label: 'Банок произведено суммарно', color: '#8B5CF6' },
+  { value: 21000, suffix: '', label: 'Банок в час — суммарная мощность', color: '#00FFFF' },
+  { value: 100, suffix: '+', label: 'Деклараций на продукцию всего', color: '#FF6B00' },
+  { value: 3, suffix: '', label: 'Федеральные сети на двух площадках', color: '#FF006E' },
 ];
 
 function Counter({ target, suffix, color, decimals = 0 }: { target: number; suffix: string; color: string; decimals?: number }) {
@@ -82,6 +82,55 @@ export default function StatsSection() {
               <div className="mt-4 h-0.5 rounded-full" style={{ background: `linear-gradient(90deg, transparent, ${stat.color}, transparent)` }} />
             </div>
           ))}
+        </div>
+
+        {/* Площадка 1 */}
+        <div className="reveal delay-200 mt-16">
+          <div
+            className="rounded-3xl overflow-hidden border"
+            style={{ borderColor: 'rgba(139,92,246,0.2)', background: 'var(--card-bg)' }}
+          >
+            <div className="px-8 pt-10 pb-6 border-b border-white/5">
+              <div className="flex flex-col md:flex-row md:items-center gap-4 mb-2">
+                <span className="text-4xl">🏭</span>
+                <div>
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-green-500/30 bg-green-500/10 text-green-300 text-xs font-mono">
+                      <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block pulse-dot" />
+                      Запущена · июнь 2025
+                    </div>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-xs font-mono">
+                      Работает
+                    </div>
+                  </div>
+                  <h3 className="text-3xl md:text-4xl font-bold text-white">
+                    Производственная площадка{' '}
+                    <span className="gradient-text-purple">№1</span>
+                  </h3>
+                  <p className="text-gray-400 mt-2 max-w-2xl">
+                    Первая площадка запущена в июне 2025 года. Производит энергетики, холодные чаи и лимонады в алюминиевой банке.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-white/5">
+              {[
+                { icon: '⚡', value: '12 000', unit: 'банок / час', label: 'Мощность линии', color: '#8B5CF6' },
+                { icon: '📅', value: 'Июнь', unit: '2025', label: 'Дата запуска', color: '#00FFFF' },
+                { icon: '🏪', value: 'X5, Магнит,', unit: 'К&Б', label: 'Поставки в федеральные сети', color: '#FF6B00' },
+              ].map((item) => (
+                <div key={item.label} className="p-8 flex flex-col gap-2 hover:bg-white/[0.02] transition-colors">
+                  <span className="text-3xl">{item.icon}</span>
+                  <div>
+                    <span className="text-2xl font-bold font-mono" style={{ color: item.color }}>{item.value}</span>
+                    <span className="text-gray-500 font-mono text-sm ml-2">{item.unit}</span>
+                  </div>
+                  <p className="text-gray-400 text-sm leading-snug">{item.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Площадка 2 */}

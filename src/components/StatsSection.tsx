@@ -192,61 +192,7 @@ export default function StatsSection() {
           </div>
         </div>
 
-        {/* Бородино */}
-        <div className="reveal delay-200 mt-8">
-          <div className="rounded-3xl overflow-hidden border border-gray-100 bg-white shadow-sm">
-            <div className="px-8 pt-10 pb-6 border-b border-gray-100">
-              <div className="flex flex-col md:flex-row md:items-center gap-4 mb-2">
-                <span className="text-4xl">🏗️</span>
-                <div>
-                  <div className="flex flex-wrap gap-2 mb-2">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-200 bg-cyan-50 text-cyan-700 text-xs font-mono">
-                      <span className="pulse-dot w-1.5 h-1.5 rounded-full bg-cyan-500 inline-block" />
-                      Земля куплена · 2026
-                    </div>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-orange-200 bg-orange-50 text-orange-700 text-xs font-mono">
-                      <span className="pulse-dot w-1.5 h-1.5 rounded-full bg-orange-400 inline-block" />
-                      Ищем инвесторов
-                    </div>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-200 bg-purple-50 text-purple-700 text-xs font-mono">
-                      Запуск · 2028
-                    </div>
-                  </div>
-                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
-                    Индустриальный парк{' '}
-                    <span style={{
-                      background: 'linear-gradient(135deg, #0891b2, #7c3aed)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text',
-                    }}>«Бородино»</span>
-                  </h3>
-                  <p className="text-gray-500 mt-2 max-w-2xl">
-                    Флагманский производственный объект ВПК. Земля приобретена, начато проектирование. Ищем стратегических инвесторов для строительства.
-                  </p>
-                </div>
-              </div>
-            </div>
 
-            <div className="grid md:grid-cols-4 gap-0 divide-y md:divide-y-0 md:divide-x divide-gray-100">
-              {[
-                { icon: '⚡', value: '60 000', unit: 'банок / час', label: 'Целевая мощность', color: '#7c3aed' },
-                { icon: '🏢', value: '8 000', unit: 'м²', label: 'Площадь производства', color: '#0891b2' },
-                { icon: '📅', value: '2028', unit: 'год', label: 'Плановый запуск', color: '#ea580c' },
-                { icon: '💰', value: 'Открыт', unit: 'для инвесторов', label: 'Статус финансирования', color: '#db2777' },
-              ].map((item) => (
-                <div key={item.label} className="p-8 flex flex-col gap-2 hover:bg-gray-50 transition-colors">
-                  <span className="text-3xl">{item.icon}</span>
-                  <div>
-                    <span className="text-2xl font-bold font-mono" style={{ color: item.color }}>{item.value}</span>
-                    <span className="text-gray-400 font-mono text-sm ml-2">{item.unit}</span>
-                  </div>
-                  <p className="text-gray-500 text-sm leading-snug">{item.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

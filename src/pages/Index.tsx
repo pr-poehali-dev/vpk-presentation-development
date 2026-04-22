@@ -6,6 +6,7 @@ import HistorySection from '@/components/HistorySection';
 import StatsSection from '@/components/StatsSection';
 import ValuesSection from '@/components/ValuesSection';
 import TeamSection from '@/components/TeamSection';
+import BorodinoSection from '@/components/BorodinoSection';
 import CtaSection from '@/components/CtaSection';
 
 export default function Index() {
@@ -41,6 +42,7 @@ export default function Index() {
       <StatsSection />
       <ValuesSection />
       <TeamSection />
+      <BorodinoSection />
       <CtaSection />
     </main>
   );

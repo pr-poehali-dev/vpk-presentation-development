@@ -24,23 +24,6 @@ export default function Navbar() {
           className="h-9 w-auto object-contain"
         />
 
-        <nav className="hidden md:flex items-center gap-8">
-          {[
-            { label: 'Миссия', href: '#mission' },
-            { label: 'История', href: '#history' },
-            { label: 'Производство', href: '#stats' },
-            { label: 'Команда', href: '#team' },
-          ].map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
-
         <a
           href="#cta"
           className="px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:scale-105 hover:shadow-md"

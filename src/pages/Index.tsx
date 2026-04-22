@@ -1,14 +1,45 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from 'react';
+import HeroSection from '@/components/HeroSection';
+import MissionSection from '@/components/MissionSection';
+import HistorySection from '@/components/HistorySection';
+import StatsSection from '@/components/StatsSection';
+import ValuesSection from '@/components/ValuesSection';
+import TeamSection from '@/components/TeamSection';
+import CtaSection from '@/components/CtaSection';
 
-const Index = () => {
+export default function Index() {
+  useEffect(() => {
+    const observe = () => {
+      const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        },
+        { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+      );
+
+      elements.forEach((el) => observer.observe(el));
+      return observer;
+    };
+
+    const observer = observe();
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
-    </div>
+    <main className="bg-[#0A0A0A]">
+      <HeroSection />
+      <MissionSection />
+      <HistorySection />
+      <StatsSection />
+      <ValuesSection />
+      <TeamSection />
+      <CtaSection />
+    </main>
   );
-};
-
-export default Index;
+}

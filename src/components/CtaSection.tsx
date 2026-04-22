@@ -1,9 +1,10 @@
 export default function CtaSection() {
   return (
-    <section className="relative py-40 px-6 overflow-hidden" style={{ background: '#050505' }}>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[120px] opacity-20" style={{ background: 'conic-gradient(#8B5CF6, #00FFFF, #FF006E, #FF6B00, #8B5CF6)' }} />
-
-      <div className="absolute inset-0 grid-lines opacity-30" />
+    <section className="relative py-40 px-6 overflow-hidden bg-gray-900">
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full blur-[140px] opacity-30 pointer-events-none"
+        style={{ background: 'linear-gradient(135deg, #7c3aed, #0891b2)' }}
+      />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <div className="reveal">
@@ -15,7 +16,12 @@ export default function CtaSection() {
           <h2 className="text-6xl md:text-8xl font-bold text-white mb-6 leading-tight">
             Запустим
             <br />
-            <span className="gradient-text-purple text-glow-purple">ваш напиток?</span>
+            <span style={{
+              background: 'linear-gradient(135deg, #a78bfa, #67e8f9)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}>ваш напиток?</span>
           </h2>
 
           <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
@@ -27,13 +33,13 @@ export default function CtaSection() {
           <button
             className="px-10 py-5 rounded-2xl text-lg font-bold text-white transition-all hover:scale-105 hover:shadow-2xl"
             style={{
-              background: 'linear-gradient(135deg, #8B5CF6, #00FFFF)',
-              boxShadow: '0 0 40px rgba(139,92,246,0.4)',
+              background: 'linear-gradient(135deg, #7c3aed, #0891b2)',
+              boxShadow: '0 0 40px rgba(124,58,237,0.3)',
             }}
           >
             Обсудить производство →
           </button>
-          <button className="px-10 py-5 rounded-2xl text-lg font-semibold bg-white/5 text-white border border-white/10 hover:bg-white/10 transition-all">
+          <button className="px-10 py-5 rounded-2xl text-lg font-semibold bg-white/10 text-white border border-white/20 hover:bg-white/15 transition-all">
             Рассчитать стоимость
           </button>
         </div>
@@ -45,14 +51,22 @@ export default function CtaSection() {
             { label: 'Мощность линии', value: '12 000 / час' },
           ].map((item) => (
             <div key={item.label} className="text-center">
-              <div className="text-xl font-bold gradient-text-purple font-mono">{item.value}</div>
+              <div
+                className="text-xl font-bold font-mono"
+                style={{
+                  background: 'linear-gradient(135deg, #a78bfa, #67e8f9)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+              >{item.value}</div>
               <div className="text-gray-500 text-sm mt-1">{item.label}</div>
             </div>
           ))}
         </div>
       </div>
 
-      <footer className="relative z-10 mt-32 pt-8 border-t border-white/5 text-center">
+      <footer className="relative z-10 mt-32 pt-8 border-t border-white/10 text-center">
         <p className="text-gray-600 font-mono text-sm">
           © 2024 ООО «ВПК» — Вяземская производственная компания. Все права защищены.
         </p>

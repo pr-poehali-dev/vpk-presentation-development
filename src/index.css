@@ -42,8 +42,8 @@
     --neon-pink: #db2777;
     --neon-orange: #ea580c;
     --deep-bg: #ffffff;
-    --card-bg: #f5f5f5;
-    --border-glow: rgba(124, 58, 237, 0.2);
+    --card-bg: #ffffff;
+    --border-glow: rgba(124, 58, 237, 0.15);
   }
 }
 
@@ -351,5 +351,10 @@
 
 .btn-neon:hover {
   color: white;
-  box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
+}
+
+/* Glow effects light */
+.glow-purple {
+  box-shadow: 0 4px 30px rgba(124, 58, 237, 0.2);
 }

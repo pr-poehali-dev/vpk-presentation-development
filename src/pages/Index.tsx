@@ -32,7 +32,7 @@ export default function Index() {
   }, []);
 
   return (
-    <main className="bg-[#0A0A0A]">
+    <main className="bg-white">
       <HeroSection />
       <MissionSection />
       <HistorySection />

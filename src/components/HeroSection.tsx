@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-const WORDS = ['инновации', 'будущее', 'прорыв', 'революцию'];
+const WORDS = ['энергетики', 'лимонады', 'холодные чаи', 'ваш бренд'];
 
 export default function HeroSection() {
   const [wordIndex, setWordIndex] = useState(0);
@@ -109,11 +109,11 @@ export default function HeroSection() {
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-sm font-mono mb-8">
           <span className="pulse-dot w-2 h-2 rounded-full bg-purple-400 inline-block" />
-          Запуск новой эры
+          Вяземская производственная компания
         </div>
 
         <h1 className="text-6xl md:text-8xl font-bold leading-tight mb-6">
-          <span className="text-white">Мы создаём</span>
+          <span className="text-white">ВПК производит</span>
           <br />
           <span className="gradient-text-purple text-glow-purple">
             {displayed}
@@ -122,7 +122,7 @@ export default function HeroSection() {
         </h1>
 
         <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-          Каждый день мы переосмысляем то, что возможно. Прокрути вниз и узнай нашу историю — от первой идеи до глобального масштаба.
+          Производственная платформа полного цикла: от разработки рецептуры до поставки в федеральные сети. Путь бренда от идеи до полки — за месяцы, а не годы.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

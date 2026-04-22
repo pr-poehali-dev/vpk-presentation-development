@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 
 const STATS = [
-  { value: 2000000, suffix: '+', label: 'Активных пользователей', color: '#8B5CF6' },
-  { value: 47, suffix: '', label: 'Стран присутствия', color: '#00FFFF' },
-  { value: 99.9, suffix: '%', label: 'Uptime платформы', color: '#FF6B00', decimals: 1 },
-  { value: 340, suffix: '%', label: 'Рост за 2 года', color: '#FF006E' },
+  { value: 80000000, suffix: '+', label: 'Банок произведено', color: '#8B5CF6' },
+  { value: 12000, suffix: '', label: 'Банок в час — мощность линии', color: '#00FFFF' },
+  { value: 100, suffix: '+', label: 'Деклараций на продукцию', color: '#FF6B00' },
+  { value: 3, suffix: '', label: 'Федеральные сети: X5, Магнит, К&Б', color: '#FF006E' },
 ];
 
 function Counter({ target, suffix, color, decimals = 0 }: { target: number; suffix: string; color: string; decimals?: number }) {
@@ -61,8 +61,8 @@ export default function StatsSection() {
         <div className="reveal text-center mb-20">
           <span className="text-purple-400 font-mono text-sm tracking-widest uppercase">/ цифры говорят /</span>
           <h2 className="text-5xl md:text-6xl font-bold mt-4 text-white">
-            Результаты,<br />
-            <span className="gradient-text-purple">которые видно</span>
+            Производство<br />
+            <span className="gradient-text-purple">в цифрах</span>
           </h2>
         </div>
 
@@ -89,8 +89,8 @@ export default function StatsSection() {
           <div className="relative z-10">
             <div className="overflow-hidden">
               <div className="marquee-track flex gap-12 whitespace-nowrap">
-                {['React', 'Python', 'TypeScript', 'PostgreSQL', 'Redis', 'Kubernetes', 'GraphQL', 'WebSockets', 'AI/ML', 'Edge Computing',
-                  'React', 'Python', 'TypeScript', 'PostgreSQL', 'Redis', 'Kubernetes', 'GraphQL', 'WebSockets', 'AI/ML', 'Edge Computing'].map((tech, i) => (
+                {['Энергетики', 'Лимонады', 'Холодные чаи', 'Тонизирующие', 'Мохито', 'Газированные', 'СТМ', 'Sleeve от 25K', 'Литография от 250K', 'Разработка рецептур',
+                  'Энергетики', 'Лимонады', 'Холодные чаи', 'Тонизирующие', 'Мохито', 'Газированные', 'СТМ', 'Sleeve от 25K', 'Литография от 250K', 'Разработка рецептур'].map((tech, i) => (
                   <span key={i} className="text-gray-400 font-mono text-sm px-4 py-2 rounded-full border border-white/10">
                     {tech}
                   </span>

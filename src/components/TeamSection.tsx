@@ -1,23 +1,23 @@
 const TEAM = [
   {
-    name: 'Александр Волков',
-    role: 'CEO & Co-founder',
-    bio: '15 лет в технологиях. Бывший CTO в двух единорогах. Верит, что лучшие продукты рождаются на стыке страсти и данных.',
-    emoji: '👨‍🚀',
+    name: 'Евгений Петиков',
+    role: 'Сооснователь',
+    bio: 'Развитие бизнеса и продаж. Строит партнёрства с федеральными сетями и находит точки роста для брендов-партнёров ВПК.',
+    emoji: '🤝',
     color: '#8B5CF6',
   },
   {
-    name: 'Мария Соколова',
-    role: 'CTO & Co-founder',
-    bio: 'Архитектор систем, которые видели 10M+ запросов в секунду. Спикер на 20+ технических конференциях по всему миру.',
-    emoji: '👩‍💻',
+    name: 'Денис Штанько',
+    role: 'Генеральный директор',
+    bio: 'Операционное управление производством. Отвечает за то, чтобы каждая банка сходила с линии точно в срок и по стандарту.',
+    emoji: '🏭',
     color: '#00FFFF',
   },
   {
-    name: 'Дмитрий Орлов',
-    role: 'CPO & Co-founder',
-    bio: 'Продуктовый мыслитель. Запустил 7 продуктов с нуля. Фанат простоты — убирает лишнее, пока не останется суть.',
-    emoji: '🧪',
+    name: 'Даниэль Швец',
+    role: 'Сооснователь',
+    bio: 'Развитие бизнеса и привлечение новых партнёров на контрактное производство. Знает, как вывести бренд на полку с нуля.',
+    emoji: '🚀',
     color: '#FF6B00',
   },
 ];
@@ -29,11 +29,11 @@ export default function TeamSection() {
         <div className="reveal text-center mb-20">
           <span className="text-cyan-400 font-mono text-sm tracking-widest uppercase">/ команда /</span>
           <h2 className="text-5xl md:text-6xl font-bold mt-4 text-white">
-            Люди, которые<br />
-            <span className="gradient-text-purple">делают это</span>
+            Команда,<br />
+            <span className="gradient-text-purple">которая строит ВПК</span>
           </h2>
           <p className="text-gray-400 mt-6 max-w-2xl mx-auto text-lg">
-            За каждым продуктом стоят люди с характером. Познакомьтесь с теми, кто превращает идеи в реальность.
+            Управление осуществляется напрямую собственниками — без лишней иерархии, с полной ответственностью за результат.
           </p>
         </div>
 
@@ -72,9 +72,9 @@ export default function TeamSection() {
         </div>
 
         <div className="reveal delay-300 mt-16 text-center">
-          <p className="text-gray-400 mb-6">И ещё <span className="text-white font-bold">120+ человек</span>, которые делают магию каждый день</p>
+          <p className="text-gray-400 mb-6">Также в числе учредителей: <span className="text-white font-bold">Виктория Ремешевская</span> и <span className="text-white font-bold">Елизавета Львова</span></p>
           <button className="btn-neon px-8 py-4 rounded-xl font-mono font-semibold">
-            Присоединиться к команде →
+            Стать партнёром →
           </button>
         </div>
       </div>

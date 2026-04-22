@@ -13,13 +13,13 @@ export default function CtaSection() {
           </div>
 
           <h2 className="text-6xl md:text-8xl font-bold text-white mb-6 leading-tight">
-            Готов к
+            Запустим
             <br />
-            <span className="gradient-text-purple text-glow-purple">запуску?</span>
+            <span className="gradient-text-purple text-glow-purple">ваш напиток?</span>
           </h2>
 
           <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Поговорим о твоём проекте. Первая встреча — бесплатно. Мы не продаём — мы решаем задачи.
+            Обсудим вашу задачу: рецептура, дизайн, объём, сети. Минимальная партия от 25 000 банок — мы готовы работать с новыми брендами.
           </p>
         </div>
 
@@ -31,18 +31,18 @@ export default function CtaSection() {
               boxShadow: '0 0 40px rgba(139,92,246,0.4)',
             }}
           >
-            Начать разговор →
+            Обсудить производство →
           </button>
           <button className="px-10 py-5 rounded-2xl text-lg font-semibold bg-white/5 text-white border border-white/10 hover:bg-white/10 transition-all">
-            Смотреть кейсы
+            Рассчитать стоимость
           </button>
         </div>
 
         <div className="reveal delay-400 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
           {[
-            { label: 'Ответ за', value: '24 часа' },
-            { label: 'Первая встреча', value: 'Бесплатно' },
-            { label: 'NDA по запросу', value: 'Сразу' },
+            { label: 'Sleeve от', value: '25 000 банок' },
+            { label: 'Литография от', value: '250 000 банок' },
+            { label: 'Мощность линии', value: '12 000 / час' },
           ].map((item) => (
             <div key={item.label} className="text-center">
               <div className="text-xl font-bold gradient-text-purple font-mono">{item.value}</div>
@@ -54,7 +54,7 @@ export default function CtaSection() {
 
       <footer className="relative z-10 mt-32 pt-8 border-t border-white/5 text-center">
         <p className="text-gray-600 font-mono text-sm">
-          © 2024 Компания. Все права защищены.
+          © 2024 ООО «ВПК» — Вяземская производственная компания. Все права защищены.
         </p>
       </footer>
     </section>

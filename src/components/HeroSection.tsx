@@ -21,7 +21,7 @@ export default function HeroSection() {
 
         <div className="flex justify-center mb-10">
           <img
-            src="https://cdn.poehali.dev/projects/464e3b76-117f-416b-ac7d-1548e29f69d5/bucket/f0ace726-ce65-4e1c-b841-4438a5f61b65.jpg"
+            src="https://cdn.poehali.dev/projects/464e3b76-117f-416b-ac7d-1548e29f69d5/bucket/4a3bd78c-1a60-48c7-86ff-894bb057295d.png"
             alt="ВПК — Вяземская производственная компания"
             className="h-20 md:h-28 w-auto object-contain"
           />

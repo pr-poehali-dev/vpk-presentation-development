@@ -24,9 +24,9 @@ const TEAM = [
 
 export default function TeamSection() {
   return (
-    <section className="slide relative h-screen flex items-center overflow-hidden px-6" style={{ background: 'var(--deep-bg)' }}>
-      <div className="max-w-6xl mx-auto w-full">
-        <div className="reveal text-center mb-10">
+    <section className="relative py-32 px-6" style={{ background: 'var(--deep-bg)' }}>
+      <div className="max-w-6xl mx-auto">
+        <div className="reveal text-center mb-20">
           <span className="text-cyan-400 font-mono text-sm tracking-widest uppercase">/ команда /</span>
           <h2 className="text-5xl md:text-6xl font-bold mt-4 text-white">
             Команда,<br />

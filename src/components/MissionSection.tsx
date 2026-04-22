@@ -1,10 +1,10 @@
 export default function MissionSection() {
   return (
-    <section className="slide relative h-screen flex items-center overflow-hidden px-6" style={{ background: 'var(--deep-bg)' }}>
+    <section className="relative py-32 px-6 overflow-hidden" style={{ background: 'var(--deep-bg)' }}>
       <div className="absolute inset-0 grid-lines opacity-50" />
 
-      <div className="relative z-10 max-w-6xl mx-auto w-full">
-        <div className="reveal text-center mb-10">
+      <div className="relative z-10 max-w-6xl mx-auto">
+        <div className="reveal text-center mb-20">
           <span className="text-purple-400 font-mono text-sm tracking-widest uppercase">/ наша миссия /</span>
           <h2 className="text-5xl md:text-6xl font-bold mt-4 text-white">
             Мы не просто разливаем —<br />
@@ -52,9 +52,9 @@ export default function MissionSection() {
           ))}
         </div>
 
-        <div className="reveal delay-200 mt-8 rounded-3xl p-px animated-border">
-          <div className="rounded-3xl p-8 text-center" style={{ background: 'var(--card-bg)' }}>
-            <p className="text-2xl md:text-3xl font-bold text-white leading-relaxed">
+        <div className="reveal delay-200 mt-20 rounded-3xl p-px animated-border">
+          <div className="rounded-3xl p-12 text-center" style={{ background: 'var(--card-bg)' }}>
+            <p className="text-3xl md:text-4xl font-bold text-white leading-relaxed">
               "Наша задача —{' '}
               <span className="gradient-text-purple">сократить путь бренда</span>{' '}
               от идеи до полки{' '}

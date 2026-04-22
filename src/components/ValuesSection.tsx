@@ -27,11 +27,11 @@ const VALUES = [
 
 export default function ValuesSection() {
   return (
-    <section className="slide relative h-screen flex items-center overflow-hidden px-6" style={{ background: '#050505' }}>
+    <section className="relative py-32 px-6 overflow-hidden" style={{ background: '#050505' }}>
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full opacity-10 blur-[100px]" style={{ background: '#8B5CF6' }} />
 
-      <div className="relative z-10 max-w-6xl mx-auto w-full">
-        <div className="reveal text-center mb-10">
+      <div className="relative z-10 max-w-6xl mx-auto">
+        <div className="reveal text-center mb-20">
           <span className="text-orange-400 font-mono text-sm tracking-widest uppercase">/ наши ценности /</span>
           <h2 className="text-5xl md:text-6xl font-bold mt-4 text-white">
             То, во что<br />

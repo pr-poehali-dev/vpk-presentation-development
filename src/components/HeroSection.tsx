@@ -73,27 +73,6 @@ export default function HeroSection() {
           <span className="text-white font-medium"> от рецептуры до полки</span> федеральных сетей.
         </p>
 
-        <div className="flex flex-wrap gap-3 justify-center mb-16">
-          {[
-            { label: '12 000 банок/час', color: '#8B5CF6' },
-            { label: 'X5 · Магнит · К&Б', color: '#00FFFF' },
-            { label: 'Sleeve от 25K банок', color: '#FF6B00' },
-            { label: 'Разработка рецептуры', color: '#FF006E' },
-          ].map((tag) => (
-            <span
-              key={tag.label}
-              className="px-4 py-2 rounded-full text-sm font-mono backdrop-blur-sm border"
-              style={{
-                borderColor: `${tag.color}30`,
-                background: `${tag.color}10`,
-                color: tag.color,
-              }}
-            >
-              {tag.label}
-            </span>
-          ))}
-        </div>
-
         <div className="flex flex-col items-center gap-2 text-gray-500 text-sm">
           <span className="font-mono text-xs tracking-widest uppercase opacity-60">Прокрути вниз</span>
           <div className="w-5 h-8 rounded-full border border-gray-600 flex justify-center pt-1.5">

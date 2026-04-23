@@ -6,44 +6,44 @@
 
 @layer base {
   :root {
-    --background: 222 47% 7%;
-    --foreground: 0 0% 95%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 8%;
 
-    --card: 222 40% 10%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 97%;
+    --card-foreground: 0 0% 8%;
 
-    --popover: 222 40% 10%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 97%;
+    --popover-foreground: 0 0% 8%;
 
-    --primary: 262 80% 65%;
+    --primary: 262 80% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 222 35% 15%;
-    --secondary-foreground: 0 0% 90%;
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 8%;
 
-    --muted: 222 35% 15%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 262 80% 65%;
+    --accent: 262 80% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 222 30% 20%;
-    --input: 222 30% 20%;
-    --ring: 262 80% 65%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 262 80% 55%;
 
     --radius: 0.75rem;
 
     /* Brand colors */
-    --neon-purple: #9d6fff;
-    --neon-cyan: #22d3ee;
-    --neon-pink: #f472b6;
-    --neon-orange: #fb923c;
-    --deep-bg: #080d1a;
-    --card-bg: #0f1629;
-    --border-glow: rgba(157, 111, 255, 0.25);
+    --neon-purple: #7c3aed;
+    --neon-cyan: #0891b2;
+    --neon-pink: #db2777;
+    --neon-orange: #ea580c;
+    --deep-bg: #ffffff;
+    --card-bg: #ffffff;
+    --border-glow: rgba(124, 58, 237, 0.15);
   }
 }
 
@@ -192,8 +192,8 @@
 /* Grid lines */
 .grid-lines {
   background-image:
-    linear-gradient(rgba(157, 111, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(157, 111, 255, 0.08) 1px, transparent 1px);
+    linear-gradient(rgba(124, 58, 237, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.07) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 

@@ -2,43 +2,39 @@ const VALUES = [
   {
     num: '01',
     title: 'Дерзость',
-    text: 'Мы не боимся ставить невозможные цели. Дерзость — это готовность идти туда, куда другие боятся.',
-    color: '#a78bfa',
+    text: 'Мы не боимся ставить невозможные цели. Дерзость — это не самонадеянность, это готовность идти туда, куда другие боятся.',
+    color: '#7c3aed',
   },
   {
     num: '02',
     title: 'Честность',
-    text: 'С командой, клиентами и самими собой. Прозрачность в каждом решении — основа доверия, которое мы строим годами.',
-    color: '#67e8f9',
+    text: 'С командой, клиентами и самими собой. Прозрачность в каждом решении — это основа доверия, которое мы строим годами.',
+    color: '#0891b2',
   },
   {
     num: '03',
     title: 'Скорость',
-    text: 'Скорость — не враг качества. Это дисциплина. Мы доставляем результат быстро, потому что уважаем время.',
-    color: '#fb923c',
+    text: 'Скорость — не враг качества. Это дисциплина. Мы доставляем результат быстро, потому что уважаем время — наше и клиента.',
+    color: '#ea580c',
   },
   {
     num: '04',
     title: 'Эволюция',
-    text: 'Мы учимся каждый день. Компания, которая перестаёт учиться — умирает. Мы растём быстрее рынка.',
-    color: '#f472b6',
+    text: 'Мы учимся каждый день. Компания которая перестаёт учиться — умирает. Мы растём быстрее, чем меняется рынок.',
+    color: '#db2777',
   },
 ];
 
 export default function ValuesSection() {
   return (
-    <section className="relative py-32 px-6 overflow-hidden" style={{ background: '#0a0f20' }}>
-      <div
-        className="absolute top-0 left-0 w-[600px] h-[600px] rounded-full blur-[200px] opacity-10 pointer-events-none"
-        style={{ background: '#f472b6' }}
-      />
+    <section className="relative py-32 px-6 overflow-hidden bg-white">
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="reveal text-center mb-20">
-          <span className="text-orange-400 font-mono text-sm tracking-widest uppercase">/ наши ценности /</span>
-          <h2 className="text-5xl md:text-7xl font-bold mt-4 text-white leading-tight">
+          <span className="text-orange-500 font-mono text-sm tracking-widest uppercase">/ наши ценности /</span>
+          <h2 className="text-5xl md:text-6xl font-bold mt-4 text-gray-900">
             То, во что<br />
             <span style={{
-              background: 'linear-gradient(135deg, #fb923c, #f472b6)',
+              background: 'linear-gradient(135deg, #ea580c, #db2777)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -50,20 +46,17 @@ export default function ValuesSection() {
           {VALUES.map((v, i) => (
             <div
               key={v.num}
-              className={`reveal ${i % 2 === 0 ? 'reveal-left' : 'reveal-right'} delay-${i * 100 + 100} group relative rounded-2xl p-8 transition-all duration-300`}
-              style={{
-                background: 'rgba(255,255,255,0.04)',
-                border: `1px solid ${v.color}30`,
-              }}
+              className={`reveal ${i % 2 === 0 ? 'reveal-left' : 'reveal-right'} delay-${i * 100 + 100} group relative rounded-2xl p-8 border bg-white hover:shadow-md transition-all duration-300 hover:scale-[1.02] cursor-default`}
+              style={{ borderColor: `${v.color}25` }}
             >
               <div
                 className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                style={{ background: `radial-gradient(circle at 50% 50%, ${v.color}08, transparent 70%)` }}
+                style={{ background: `radial-gradient(circle at 50% 50%, ${v.color}06, transparent 70%)` }}
               />
               <div className="relative z-10">
                 <div className="flex items-start gap-6">
                   <span
-                    className="text-7xl font-bold font-mono leading-none opacity-20 group-hover:opacity-40 transition-opacity"
+                    className="text-6xl font-bold font-mono leading-none opacity-15 group-hover:opacity-30 transition-opacity"
                     style={{ color: v.color }}
                   >
                     {v.num}
@@ -75,7 +68,7 @@ export default function ValuesSection() {
                     >
                       {v.title}
                     </h3>
-                    <p className="text-gray-400 leading-relaxed text-lg">{v.text}</p>
+                    <p className="text-gray-500 leading-relaxed">{v.text}</p>
                   </div>
                 </div>
               </div>

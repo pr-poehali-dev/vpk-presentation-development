@@ -4,6 +4,7 @@ import MissionSection from '@/components/MissionSection';
 import HistorySection from '@/components/HistorySection';
 import StatsSection from '@/components/StatsSection';
 import ValuesSection from '@/components/ValuesSection';
+import ArnesSection from '@/components/ArnesSection';
 import TeamSection from '@/components/TeamSection';
 import BorodinoSection from '@/components/BorodinoSection';
 
@@ -38,6 +39,7 @@ export default function Index() {
       <HistorySection />
       <StatsSection />
       <ValuesSection />
+      <ArnesSection />
       <TeamSection />
       <BorodinoSection />
     </main>

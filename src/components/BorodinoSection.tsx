@@ -11,19 +11,13 @@ export default function BorodinoSection() {
 
         {/* Заголовок */}
         <div className="reveal text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-orange-500/40 bg-orange-500/10 text-orange-300 text-sm font-mono mb-8">
-            <span className="pulse-dot w-2 h-2 rounded-full bg-orange-400 inline-block" />
-            Ищем инвесторов · Запуск 2028
-          </div>
-
           <h2 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
-            Инвестируй в<br />
             <span style={{
               background: 'linear-gradient(135deg, #60a5fa, #a78bfa, #67e8f9)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
-            }}>индустриальный парк</span><br />
+            }}>Индустриальный парк</span><br />
             <span style={{
               background: 'linear-gradient(135deg, #fbbf24, #f97316)',
               WebkitBackgroundClip: 'text',
@@ -51,9 +45,9 @@ export default function BorodinoSection() {
         <div className="reveal delay-200 grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
           {[
             { icon: '⚡', value: '60 000', unit: 'банок / час', label: 'Целевая мощность', color: '#a78bfa' },
-            { icon: '🏢', value: '8 000', unit: 'м²', label: 'Площадь производства', color: '#67e8f9' },
-            { icon: '📅', value: '2028', unit: 'год', label: 'Плановый запуск', color: '#fbbf24' },
-            { icon: '💰', value: 'Открыт', unit: 'для инвесторов', label: 'Статус финансирования', color: '#f97316' },
+            { icon: '🏢', value: '43 000', unit: 'м²', label: 'Общая площадь', color: '#67e8f9' },
+            { icon: '🏭', value: '8 000', unit: 'м²', label: 'Площадь производства', color: '#60a5fa' },
+            { icon: '📅', value: '2026', unit: 'год', label: 'Плановый запуск', color: '#fbbf24' },
           ].map((item) => (
             <div
               key={item.label}
@@ -65,24 +59,6 @@ export default function BorodinoSection() {
               <div className="text-gray-500 text-xs">{item.label}</div>
             </div>
           ))}
-        </div>
-
-        {/* CTA */}
-        <div className="reveal delay-300 text-center">
-          <div className="inline-flex flex-col sm:flex-row gap-4">
-            <button
-              className="px-10 py-5 rounded-2xl text-lg font-bold text-white transition-all hover:scale-105 hover:shadow-2xl"
-              style={{
-                background: 'linear-gradient(135deg, #f97316, #fbbf24)',
-                boxShadow: '0 0 40px rgba(249,115,22,0.3)',
-              }}
-            >
-              Обсудить инвестиции →
-            </button>
-            <button className="px-10 py-5 rounded-2xl text-lg font-semibold text-white border border-white/20 bg-white/5 hover:bg-white/10 transition-all">
-              Скачать презентацию
-            </button>
-          </div>
         </div>
 
       </div>

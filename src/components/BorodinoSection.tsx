@@ -66,8 +66,8 @@ export default function BorodinoSection() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               { from: 'Вязьма', to: 'Москва', km: '210 км', icon: '🛣️', color: '#a78bfa' },
-              { from: 'Вязьма', to: 'Минск', km: '280 км', icon: '🛣️', color: '#67e8f9' },
-              { from: 'Вязьма', to: 'Санкт-Петербург', km: '560 км', icon: '🛣️', color: '#fbbf24' },
+              { from: 'Вязьма', to: 'Минск', km: '490 км', icon: '🛣️', color: '#67e8f9' },
+              { from: 'Вязьма', to: 'Санкт-Петербург', km: '760 км', icon: '🛣️', color: '#fbbf24' },
             ].map((item) => (
               <div
                 key={item.to}
